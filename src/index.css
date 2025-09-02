@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light;
+    color: #3c3c3c;
+    background-color: #ffffff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F3E8FF 0%, #FEF3C7 100%);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Form Input Styles */
+  .form-input {
+    @apply w-full px-4 py-3 text-lg border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none transition-all duration-200 bg-white;
+  }
+
+  .form-input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-200;
+  }
+
+  .form-textarea {
+    @apply form-input min-h-[120px] resize-y;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 transform active:scale-95;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg hover:shadow-xl hover:scale-105 focus:ring-purple-500 hover:from-purple-700 hover:to-purple-800;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-700 border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-300 focus:ring-gray-500;
+  }
+
+  .btn-disabled {
+    @apply btn bg-gray-300 text-gray-500 cursor-not-allowed hover:scale-100 shadow-none;
+  }
+
+  .btn-match {
+    @apply btn bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg hover:shadow-xl hover:scale-105 focus:ring-amber-500 hover:from-amber-600 hover:to-amber-700;
+  }
+
+  /* Card Styles */
+  .form-card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply w-full h-3 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-full transition-all duration-500 ease-out;
+  }
+
+  /* Option Cards */
+  .option-card {
+    @apply w-full p-4 border-2 border-gray-200 rounded-xl cursor-pointer transition-all duration-200 hover:border-purple-300 hover:bg-purple-50;
+  }
+
+  .option-card-selected {
+    @apply border-purple-500 bg-purple-50;
+  }
+
+  .option-card-radio {
+    @apply option-card relative;
+  }
+
+  .option-card-checkbox {
+    @apply option-card;
+  }
+
+  .option-card-checkbox-selected {
+    @apply border-purple-500 bg-purple-50;
+  }
+
+  /* Animation Classes */
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .heart-beat {
+    animation: heartBeat 1.5s ease-in-out infinite;
+  }
+
+  /* Loading States */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-6 w-6 border-2 border-gray-300 border-t-purple-500;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+  }
+
+  /* Gradient Backgrounds */
+  .bg-swanly-gradient {
+    background: linear-gradient(135deg, #F3E8FF 0%, #FEF3C7 100%);
+  }
+
+  .bg-card-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  }
+
+  .bg-header-gradient {
+    background: linear-gradient(135deg, #6B46C1 0%, #F59E0B 100%);
+  }
+}
